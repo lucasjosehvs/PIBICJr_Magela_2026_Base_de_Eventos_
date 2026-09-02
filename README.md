@@ -106,9 +106,6 @@ ANO, NATUREZA, LOCAL-NATUREZA, MEIO-DE-DIVULGACAO, ...` (24 colunas)
 - Todo o resto é biblioteca padrão: `csv`, `os`, `io`, `time`, `zipfile`,
   `xml.etree.ElementTree`, `glob`, `json`, `unicodedata`, `hashlib`,
   `sqlite3`, `urllib.request`, `collections.defaultdict`
-- Base de referência de municípios do IBGE:
-  [`kelvins/municipios-brasileiros`](https://github.com/kelvins/municipios-brasileiros)
-
 ---
 
 ## Convenções de código
