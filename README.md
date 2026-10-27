@@ -126,26 +126,6 @@ ANO, NATUREZA, LOCAL-NATUREZA, MEIO-DE-DIVULGACAO, ...` (24 colunas)
 
 ---
 
-## Problemas conhecidos / cuidados
-
-- **`ORGANIZACAO-DE-EVENTO` sem `NOME-DO-EVENTO`** — nesse bloco do schema
-  Lattes o título vem em `TITULO`, não em `NOME-DO-EVENTO`. Corrigido em
-  `extratorEventosFinal.py` (AU) com `db.get('TITULO', '')`. Exige
-  reprocessamento completo do corpus para valer para dados já extraídos.
-- **Descompasso de schema entre `geradorConjuntos.py` e
-  `removerDuplicatas.py`** — o primeiro escreve saída de uma coluna
-  delimitada por `|`; o segundo espera 12 colunas delimitadas por `;`.
-  A geração real do `Conjunto4` provavelmente usou uma variante ainda não
-  localizada, com deduplicação via `set()` sobre linhas cruas — pendente de
-  confirmação.
-- **Remoção de stopwords em colunas de nome próprio** — `nltk` aplicado sem
-  distinção de coluna em `normalizacaoGeral.py` corrompe nomes de cidade e
-  instituição (ex.: "São José dos Campos" perde o "dos"). Existe apenas uma
-  proteção parcial (`.discard('sao')`).
-- **Cidades ambíguas no mapeamento de UF** — ~4,5% dos nomes distintos de
-  cidade existem em mais de uma UF; são marcados como `AMBIGUO` em vez de
-  resolvidos por heurística, para preservar integridade dos dados.
-
 ---
 
 ## Sobre este repositório
